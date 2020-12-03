@@ -34,7 +34,10 @@ module.exports = {
             $: 'admin-lte/plugins/jquery/jquery.min.js',
             jQuery: 'admin-lte/plugins/jquery/jquery.min.js'
           })        
-    ]
+    ],
+    externals:{
+        jquery: 'jquery'
+    }
 }
 
 // ,
