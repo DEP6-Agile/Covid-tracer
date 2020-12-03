@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "admin-lte": "^3.0.5",
+    "datatables.net": "^1.10.22",
     "jquery": "^3.5.1"
   },
   "scripts": {
