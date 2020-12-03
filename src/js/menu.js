@@ -12,12 +12,12 @@ $("#main-menu a").click(function () {
         case "REPORTS_FORM":
             $("#reports_form").removeClass("d-none");
             break;
-/*        case "LOGIN_FORM": //We'll decide later what to do with these pages
+        case "LOGIN_FORM": //We'll remove these manu items later
             $("#login_form").removeClass("d-none");
             break;
-        case "SIGNUP_FORM":
+        case "SIGNUP_FORM": //We'll remove these manu items later
             $("#signup_form").removeClass("d-none");
-            break;*/
+            break;
         default:
             break;
     }
