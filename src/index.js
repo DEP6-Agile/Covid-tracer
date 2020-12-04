@@ -7,6 +7,9 @@ import signup_form from './html_parts/signup.html';
 
 $("#container").append(customer_log,input_form,login_form,reports_form,signup_form);
 
+$(".content-wrapper").addClass("d-none");
+$("#input_form").removeClass("d-none");
+
 // import '../node_modules/admin-lte/plugins/jquery/jquery.min.js';
 // import '../node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js';
 import '../node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js';
