@@ -17,5 +17,6 @@ import '../node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScr
 import '../node_modules/admin-lte/dist/js/adminlte.js';
 import '../node_modules/datatables.net/js/jquery.dataTables.min.js';
 import './js/menu';
+import './js/input_form';
 
 import './scss/style.scss';
