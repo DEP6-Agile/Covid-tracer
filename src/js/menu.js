@@ -1,3 +1,4 @@
+// import './input_form';
 $("#main-menu a").click(function () {
     $("#main-menu a").removeClass("active");
     $(this).addClass("active");
