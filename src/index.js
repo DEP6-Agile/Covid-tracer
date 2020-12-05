@@ -21,29 +21,33 @@ import '../node_modules/admin-lte/dist/js/adminlte.js';
 import './js/menu';
 
 import './scss/style.scss';
+import { getJSON } from 'jquery';
 
 var Customer=function(date,name,id,phone,address,temper,timeIn,timeOut){
-    this.date=date;
+/*     this.date=date;
     this.name=name;
     this.id=id;
     this.phone=phone;
     this.address=address;
     this.temper=temper;
     this.timeIn=timeIn;
-    this.timeOut=timeOut;
+    this.timeOut=timeOut; */
+    cusArray.push(arguments);
+
 
 }
 
-var Fun=function(id,name,age){
+/* var Fun=function(id,name,age){
     cusArray.push(arguments);
     
     for (var i=0;i<Fun.length;i++){
         
     }
-}
+} */
 
-Fun('c002','dilshan',23);
-console.log(cusArray[0][2]);
+/* Fun('c002','dilshan',23);
+console.log(cusArray[0][2]); */
+
 /* $(document).click(function( event ) {
   
     console.log($(this).text());
@@ -52,21 +56,24 @@ console.log(cusArray[0][2]);
 
 //console.log($('.main-footer').height());
 //console.log($('.main-footer').width());
+for(var i=0;i<20;i++){
+Customer('12/02/20','Sajeewa','C001','0713274293','Kegalle',35.5,'08.30','09.30');
+}
 
-var c=new Customer('12/02/20','Sajeewa','C001','0713274293','Kegalle',35.5,'08.30','09.30');
-cusArray.push(c);
-
-/*  var tRow=$('<tr></tr>');
+for(var j=0;j<cusArray.length;j++){
+  var tRow=$('<tr></tr>');
 console.log(Customer.length);
 for(var i=0;i<Customer.length;i++){
     var tData=$('<td></td>');
-    tData.text(c.id);
+    tData.text(cusArray[j][i]);
     tRow.append(tData);
 } 
-$('#customer-table').append(tRow);  */
-
+$('#customer-table').append(tRow);  
+}
 console.log($(window).innerHeight>$(document).height());
 console.log(cusArray[0].id);
+
+
 
 
 
