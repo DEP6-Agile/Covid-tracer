@@ -173,16 +173,16 @@
     <nav class="hidden" id="pagination">
         <ul class="pagination">
             <li class="page-item" id="btn-backward">
-                <a class="page-link" href="#"
-                   onclick="document.querySelector('.pagination li:nth-child(2) a').click();">
-                    <i class="fas fa-backward"></i>
+                <a id="backward" class="page-link"  href="#"
+                   >
+                    <i id="fas fa-backward" class="fas fa-backward"></i>
                 </a>
             </li>
-            <li class="page-item"><a class="page-link" href="#" onclick="navigatePage(event)">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" >1</a></li>
             <li class="page-item" id="btn-forward">
-                <a class="page-link"
+                <a id="forward" class="page-link"
                    href="#" onclick="document.querySelector('.pagination li:nth-last-child(2) a').click();">
-                    <i class="fas fa-forward"></i>
+                    <i id="fas fa-forkward" class="fas fa-forward"></i>
                 </a>
             </li>
         </ul>
@@ -193,3 +193,5 @@
 
     
 </div>
+
+<!-- onclick="document.querySelector('.pagination li:nth-child(2) a').click();" -->

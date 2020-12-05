@@ -7,7 +7,7 @@ module.exports = merge(superConfig, {
     devServer: {
         port: 3000
     },
-    devtool: true,
+    devtool: false,
     mode: 'development',
     plugins: [new MiniCssExtractPlugin({
         filename: 'main.css'

@@ -5,6 +5,8 @@ import reports_form from './html_parts/reports.html';
 import signup_form from './html_parts/signup.html';
 var cusArray=[];
 var rowsPerPage=0;
+var numPages;
+var remainRows;
 
 
 $("#container").append(customer_log,input_form,login_form,reports_form,signup_form);
@@ -58,8 +60,8 @@ console.log(cusArray[0][2]); */
 
 //console.log($('.main-footer').height());
 //console.log($('.main-footer').width());
-for(var i=0;i<41;i++){
-Customer('12/02/20','Sajeewa','C001','0713274293','Kegalle',35.5,'08.30','09.30');
+for(var i=0;i<39;i++){
+Customer('12/02/20','Sajeewa','C00'+i,'0713274293','Kegalle',35.5,'08.30','09.30');
 }
 
 var heightCheck=function(){
@@ -81,12 +83,12 @@ var heightCheck=function(){
       }
       
       } */
-      var x=0;
+    
       var rowCounter=0;
       var keepLoop=true;
       
 while(keepLoop){
-    x=x+1;
+
 
     var tRow=$('<tr></tr>');
         var tData=$('<td></td>');
@@ -117,6 +119,7 @@ $("#customer-log-link").click(function () {
         console.log('rows ',rowsPerPage); */
         addRows(0,rowsPerPage);
         pagination();
+        
 });
 
 //$('#customer-table tr').remove();
@@ -141,8 +144,8 @@ var addRows=function(start,end){
 
 
 var pagination=function(){
-        var numPages=parseInt((cusArray.length)/rowsPerPage);
-        var remainRows=parseInt((cusArray.length)%rowsPerPage);
+         numPages=parseInt((cusArray.length)/rowsPerPage);
+        remainRows=parseInt((cusArray.length)%rowsPerPage);
         console.log(numPages,remainRows);
 
         for(var i=2;i<numPages+1;i++){
@@ -162,6 +165,7 @@ var insPageLink=function(i){
      var pageLink=$('<a></a>');
      pageLink.attr('class',"page-link");
      pageLink.attr('href',"#");
+    // pageLink.click(navigatePage(event));
      pageLink.text(i);
      pageItem.append(pageLink);
      $('#btn-forward').before(pageItem);
@@ -171,9 +175,61 @@ var insPageLink=function(i){
 //console.log(rowsPerPage);
 //$('#customer-table').css('visibility', 'hidden');
 
+
+
 console.log($('#customer-table').innerHeight());
 
 
 
+$(document).on('click', function(event){
+  
+   // console.log(event);
+    
+    var clickedPage=event.target.textContent;
+ /*    if((event.target.id==='btn-backward')){
+        $('#customer-table tr').remove();
+        console.log(event.target.id);
+       
+        console.log('rowsperpagre',rowsPerPage);
+        console.log(event.target.parentElement.parentElement.id);
+        addRows(0,rowsPerPage);
 
+     } */
+     if((event.target.id=='fas fa-backward')||(event.target.id=='backward')){
+        $('#customer-table tr').remove();
+        addRows(0,rowsPerPage);
+         return;
+     }
 
+     if((event.target.id=='fas fa-forkward')||(event.target.id=='forward')){
+        $('#customer-table tr').remove();
+        addRows(numPages*rowsPerPage,(numPages*rowsPerPage)+remainRows-1);
+         return;
+     }
+    
+     
+      if((event.target.className=='page-link')) 
+     {
+       
+     //   console.log(event.target.className);
+        
+        
+     //   console.log(event.target.parentElement.parentElement.id);
+       
+        var startP=((parseInt(clickedPage)-1)*rowsPerPage);
+       // console.log('startP',startP,remainRows,clickedPage);
+        if(clickedPage==numPages+1){
+            $('#customer-table tr').remove();
+            addRows(startP,startP+remainRows-1);
+        }else if(clickedPage<numPages+1){
+            $('#customer-table tr').remove();
+            //console.log("clickedPage<numPages+1");
+        addRows(startP,startP+rowsPerPage);
+        //addRows(0,3);
+        }else{
+            
+        }
+
+     }
+   
+ });
