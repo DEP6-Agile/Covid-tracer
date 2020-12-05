@@ -58,7 +58,7 @@ console.log(cusArray[0][2]); */
 
 //console.log($('.main-footer').height());
 //console.log($('.main-footer').width());
-for(var i=0;i<40;i++){
+for(var i=0;i<41;i++){
 Customer('12/02/20','Sajeewa','C001','0713274293','Kegalle',35.5,'08.30','09.30');
 }
 
@@ -95,14 +95,14 @@ while(keepLoop){
     
       $('#customer-table').append(tRow); 
       rowCounter=rowCounter+1;
-      console.log('doc height',$(document).height());
-      console.log('window height',$(window).innerHeight());
+     /*  console.log('doc height',$(document).height());
+      console.log('window height',$(window).innerHeight()); */
       if($(window).innerHeight()<$(document).height()){
         rowsPerPage=rowCounter-1;
         keepLoop=false;
       
   }
-    console.log(x,rowsPerPage);
+   // console.log(x,rowsPerPage);
 }
 }
 
@@ -112,39 +112,65 @@ $("#customer-log-link").click(function () {
   $('#customer-table tr').remove();
     heightCheck();
     $('#customer-table tr').remove();
-        console.log($(document).height());
+        /* console.log($(document).height());
         console.log($(window).innerHeight());
-        console.log('rows ',rowsPerPage);
-        pagination(0,rowsPerPage);
+        console.log('rows ',rowsPerPage); */
+        addRows(0,rowsPerPage);
+        pagination();
 });
 
 //$('#customer-table tr').remove();
 
 
 console.log(Customer.length);
-var pagination=function(start,end){
-for(start;start<end+1;start++){
-  var tRow=$('<tr></tr>');
+var addRows=function(start,end){
+    for(start;start<end+1;start++){
+        var tRow=$('<tr></tr>');
 
-for(var i=0;i<Customer.length;i++){
-    var tData=$('<td></td>');
-    tData.text(cusArray[start][i]);
-    tRow.append(tData);
-} 
-$('#customer-table').append(tRow);
-console.log('table height',tRow.height());
- 
+    for(var i=0;i<Customer.length;i++){
+        var tData=$('<td></td>');
+        tData.text(cusArray[start][i]);
+        tRow.append(tData);
+    } 
+    $('#customer-table').append(tRow);
+    console.log('table height',tRow.height());
+    
 }
 
 }
 
 
-console.log(rowsPerPage);
+var pagination=function(){
+        var numPages=parseInt((cusArray.length)/rowsPerPage);
+        var remainRows=parseInt((cusArray.length)%rowsPerPage);
+        console.log(numPages,remainRows);
 
+        for(var i=2;i<numPages+1;i++){
+           // $('#pagination .pagination').append($('<li>2</li>'))
+           insPageLink(i);
+          
+        }
+        if(remainRows>0){
+          insPageLink(numPages+1);
 
+        }
+}
 
+var insPageLink=function(i){
+    var pageItem=$('<li></li>');
+    pageItem.attr('class',"page-item");
+     var pageLink=$('<a></a>');
+     pageLink.attr('class',"page-link");
+     pageLink.attr('href',"#");
+     pageLink.text(i);
+     pageItem.append(pageLink);
+     $('#btn-forward').before(pageItem);
 
+}
+
+//console.log(rowsPerPage);
 //$('#customer-table').css('visibility', 'hidden');
+
 console.log($('#customer-table').innerHeight());
 
 
