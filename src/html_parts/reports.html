@@ -1,38 +1,37 @@
-<div id="reports_form" class="content-wrapper">
-    <script>
-        $(document).ready(function() {
-        $('#example').DataTable();
-    } );
-    </script>
 
-    <style>
-        @media (max-width: 992px) {
+    <div id="reports_form" class="content-wrapper bg-gradient-warning text-black-50">
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
+
+        <style>
+            @media (max-width: 992px) {
+                #info-element{
+                    display: none;
+                }
+            }
+
             #info-element{
-                display: none;
+                animation-name: info-item;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+                transition-property: visibility;
+                transition-duration: 1s;
+
             }
-        }
 
-        #info-element{
-            animation-name: info-item;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            transition-property: visibility;
-            transition-duration: 1s;
-
-        }
-
-        @keyframes info-item {
-            0%{
-                transform: scale(1);
+            @keyframes info-item {
+                0%{
+                    transform: scale(1);
+                }
+                50%{
+                    transform: scale(1.05);
+                }
             }
-            50%{
-                transform: scale(1.05);
-            }
-        }
 
-    </style>
-
-    <div class="content-wrapper bg-gradient-warning text-black-50">
+        </style>
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -179,10 +178,7 @@
             </section>
         </div>
 
-
-
         <!-- /.content -->
     </div>
 
 
-</div>
