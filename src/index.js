@@ -12,6 +12,7 @@ $("#input_form").removeClass("d-none");
 
 // import '../node_modules/admin-lte/plugins/jquery/jquery.min.js';
 // import '../node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js';
+// <!-- Bootstrap 4 -->
 import '../node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js';
 import '../node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js';
 import '../node_modules/admin-lte/dist/js/adminlte.js';
