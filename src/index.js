@@ -4,6 +4,8 @@ import login_form from './html_parts/login_form.html';
 import reports_form from './html_parts/reports.html';
 import signup_form from './html_parts/signup.html';
 var cusArray=[];
+var rowsPerPage=0;
+
 
 $("#container").append(customer_log,input_form,login_form,reports_form,signup_form);
 
@@ -56,22 +58,94 @@ console.log(cusArray[0][2]); */
 
 //console.log($('.main-footer').height());
 //console.log($('.main-footer').width());
-for(var i=0;i<20;i++){
+for(var i=0;i<40;i++){
 Customer('12/02/20','Sajeewa','C001','0713274293','Kegalle',35.5,'08.30','09.30');
 }
 
-for(var j=0;j<cusArray.length;j++){
-  var tRow=$('<tr></tr>');
+var heightCheck=function(){
+ /*    var keepLoop=0;
+  
+    while(keepLoop<10){
+        var tRow=$('<tr></tr>');
+        var tData=$('<td></td>');
+        tData.text("testing");
+        tRow.append(tData);
+    
+      $('#customer-table').append(tRow);  
+      rowCounter=rowCounter+1;
+      if($(window).innerHeight>$(document).height()){
+            rowsPerPage=rowCounter-1;
+            keepLoop=11;
+      }else{
+
+      }
+      
+      } */
+      var x=0;
+      var rowCounter=0;
+      var keepLoop=true;
+      
+while(keepLoop){
+    x=x+1;
+
+    var tRow=$('<tr></tr>');
+        var tData=$('<td></td>');
+        tData.text("testing");
+        tRow.append(tData);
+    
+      $('#customer-table').append(tRow); 
+      rowCounter=rowCounter+1;
+      console.log('doc height',$(document).height());
+      console.log('window height',$(window).innerHeight());
+      if($(window).innerHeight()<$(document).height()){
+        rowsPerPage=rowCounter-1;
+        keepLoop=false;
+      
+  }
+    console.log(x,rowsPerPage);
+}
+}
+
+//$("#customer-log-link").click
+$("#customer-log-link").click(function () {
+  rowsPerPage=0;
+  $('#customer-table tr').remove();
+    heightCheck();
+    $('#customer-table tr').remove();
+        console.log($(document).height());
+        console.log($(window).innerHeight());
+        console.log('rows ',rowsPerPage);
+        pagination(0,rowsPerPage);
+});
+
+//$('#customer-table tr').remove();
+
+
 console.log(Customer.length);
+var pagination=function(start,end){
+for(start;start<end+1;start++){
+  var tRow=$('<tr></tr>');
+
 for(var i=0;i<Customer.length;i++){
     var tData=$('<td></td>');
-    tData.text(cusArray[j][i]);
+    tData.text(cusArray[start][i]);
     tRow.append(tData);
 } 
-$('#customer-table').append(tRow);  
+$('#customer-table').append(tRow);
+console.log('table height',tRow.height());
+ 
 }
-console.log($(window).innerHeight>$(document).height());
-console.log(cusArray[0].id);
+
+}
+
+
+console.log(rowsPerPage);
+
+
+
+
+//$('#customer-table').css('visibility', 'hidden');
+console.log($('#customer-table').innerHeight());
 
 
 
