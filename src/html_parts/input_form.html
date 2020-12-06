@@ -1,9 +1,105 @@
 <div id="input_form" class="content-wrapper">
     <!-- put all your edits in here -->
+<!-- <script src="../js/input_form.js"></script> -->
+ <!-- Content Header (Page header) -->
+ <section class="content-header">
+    <h1>
+      Input Customer Details
+  </section>
+<hr>
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-4">
+        <!-- general form elements -->
+        <div class="box box-primary" id="enter-data-form">
+          <!-- form start -->
+          <form role="form">
+            <div class="box-body">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Customer Name</label>
+                <input type="text" class="form-control" id="txt-input-name" placeholder="Enter customer name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">NIC/Driving License Number</label>
+                <input type="text" class="form-control" id="txt-input-nic" placeholder="Enter customer NIC/Driving licence number">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Customer Address</label>
+                <input type="text" class="form-control" id="txt-input-address" placeholder="Enter customer address">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Phone Number</label>
+                <input type="text" class="form-control" id="txt-input-phone-number" placeholder="Enter customer phone number">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Customer Temperature</label>
+                <input type="text" class="form-control" id="txt-input-temperature" placeholder="Enter customer's temperature">
+              </div>
+            </div>
+                          <!-- /.box-body -->
 
-<h1>---- input form content ----</h1>
-<p>This page is set as default page. Default page has no content yet.</p>
+                          <div class="box-footer">
+                            <button type="button" class="btn btn-danger" id="btn-input-save">Submit Information</button>
+                          </div>
+          </form>
+        </div>
+        <!-- /.box -->
+      </div>
+      <!--/.col (left) -->
+      <!-- right column -->
+      <div class="col-md-8">
+          <!-- box -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Data Table</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" id="tbl-customers">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>NIC/DLN</th>
+                  <th>Checkout</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Misc</td>
+                  <td>IE Mobile</td>
+                  <td>Windows Mobile 6</td>
+                </tr>
+                <tr>
+                  <td>Misc</td>
+                  <td>PSP browser</td>
+                  <td>PSP</td>
+                </tr>
+                <tr>
+                  <td>Other browsers</td>
+                  <td>All others</td>
+                  <td>-</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Name</th>
+                    <th>NIC/DLN</th>
+                    <th>Checkout</th>
+                  </tr>
+                </tfoot>
+              </table>
 
-
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+      </div>
+      <!--/.col (right) -->
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
     <!-- put all your edits in here -->
 </div>
