@@ -22,3 +22,15 @@ $("#main-menu a").click(function () {
             break;
     }
 });
+
+ $(document).on('click', function(event){
+  
+    console.log(event.target.id);
+    if(event.target.id=='customer')
+     {
+         $('#customer').css('color','red');
+     }
+ });
+ 
+
+ $('#customer').css('color','red');
