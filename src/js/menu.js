@@ -23,14 +23,3 @@ $("#main-menu a").click(function () {
     }
 });
 
- $(document).on('click', function(event){
-  
-    console.log(event.target.id);
-    if(event.target.id=='customer')
-     {
-         $('#customer').css('color','red');
-     }
- });
- 
-
- $('#customer').css('color','red');
