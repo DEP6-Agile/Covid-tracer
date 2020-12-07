@@ -95,11 +95,14 @@
     var t = $('#tbl_customers').DataTable();
     $("#btn-input-save").on('click', function () {
       t.row.add([
-      $("#txt-input-name").val(),$("#txt-input-nic").val(), "<a onclick='jsfunction()' href='#'>Checkout</a>"
+      $("#txt-input-name").val(),$("#txt-input-nic").val(), "<button class='checkout-button' onclick='jsfunc()' >Checkout now</button>"
       ]).draw(false);
     });
-
   });
+
+  function jsfunc(){
+  console.log("checkout");
+};
   </script>
   <!-- put all your edits in here -->
 </div>
