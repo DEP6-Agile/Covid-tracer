@@ -1,12 +1,12 @@
 <div id="input_form" class="content-wrapper">
-    <!-- put all your edits in here -->
-<!-- <script src="../js/input_form.js"></script> -->
- <!-- Content Header (Page header) -->
- <section class="content-header">
+  <!-- put all your edits in here -->
+  <!-- <script src="../js/input_form.js"></script> -->
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
     <h1>
       Input Customer Details
   </section>
-<hr>
+  <hr>
   <!-- Main content -->
   <section class="content">
     <div class="row">
@@ -23,7 +23,8 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">NIC/Driving License Number</label>
-                <input type="text" class="form-control" id="txt-input-nic" placeholder="Enter customer NIC/Driving licence number">
+                <input type="text" class="form-control" id="txt-input-nic"
+                  placeholder="Enter customer NIC/Driving licence number">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Customer Address</label>
@@ -31,18 +32,20 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Phone Number</label>
-                <input type="text" class="form-control" id="txt-input-phone-number" placeholder="Enter customer phone number">
+                <input type="text" class="form-control" id="txt-input-phone-number"
+                  placeholder="Enter customer phone number">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Customer Temperature</label>
-                <input type="text" class="form-control" id="txt-input-temperature" placeholder="Enter customer's temperature">
+                <input type="text" class="form-control" id="txt-input-temperature"
+                  placeholder="Enter customer's temperature">
               </div>
             </div>
-                          <!-- /.box-body -->
+            <!-- /.box-body -->
 
-                          <div class="box-footer">
-                            <button type="button" class="btn btn-danger" id="btn-input-save">Submit Information</button>
-                          </div>
+            <div class="box-footer">
+              <button type="button" class="btn btn-danger" id="btn-input-save">Submit Information</button>
+            </div>
           </form>
         </div>
         <!-- /.box -->
@@ -50,56 +53,53 @@
       <!--/.col (left) -->
       <!-- right column -->
       <div class="col-md-8">
-          <!-- box -->
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Data Table</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body" id="tbl-customers">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
+        <!-- box -->
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Data Table</h3>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body" id="tbl-customers">
+            <table id="tbl_customers" class="table table-bordered table-striped">
+              <thead>
                 <tr>
                   <th>Name</th>
                   <th>NIC/DLN</th>
                   <th>Checkout</th>
                 </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Misc</td>
-                  <td>IE Mobile</td>
-                  <td>Windows Mobile 6</td>
-                </tr>
-                <tr>
-                  <td>Misc</td>
-                  <td>PSP browser</td>
-                  <td>PSP</td>
-                </tr>
-                <tr>
-                  <td>Other browsers</td>
-                  <td>All others</td>
-                  <td>-</td>
-                </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>Name</th>
-                    <th>NIC/DLN</th>
-                    <th>Checkout</th>
-                  </tr>
-                </tfoot>
-              </table>
+              </thead>
+              <tbody>
 
-            </div>
-            <!-- /.box-body -->
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Name</th>
+                  <th>NIC/DLN</th>
+                  <th>Checkout</th>
+                </tr>
+              </tfoot>
+            </table>
+
           </div>
-          <!-- /.box -->
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
       </div>
       <!--/.col (right) -->
     </div>
     <!-- /.row -->
   </section>
   <!-- /.content -->
-    <!-- put all your edits in here -->
+  <script>
+ $(document).ready(function () {
+    var t = $('#tbl_customers').DataTable();
+    $("#btn-input-save").on('click', function () {
+      t.row.add([
+      $("#txt-input-name").val(),$("#txt-input-nic").val(), "<a onclick='jsfunction()' href='#'>Checkout</a>"
+      ]).draw(false);
+    });
+
+  });
+  </script>
+  <!-- put all your edits in here -->
 </div>

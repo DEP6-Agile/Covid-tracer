@@ -6,7 +6,7 @@ import signup_form from './html_parts/signup.html';
 var cusArray=[];
 var rowsPerPage=0;
 var numPages;
-var remainRows;
+var remainRows; 
 
 
 $("#container").append(customer_log,input_form,login_form,reports_form,signup_form);
@@ -28,15 +28,6 @@ import './js/menu';
 // import './js/input_form';
 
 import './scss/style.scss';
-
-
-
-
-
-
-
-
-
 
 
 /* ========================== js for customer_log.html ============ */
@@ -188,4 +179,5 @@ $(document).on('click', function(event){
 
  /* ========================== js for customer_log.html ============ */
 
- 
+
+  /* ========================== js for input_form.html ============ */
